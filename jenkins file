@@ -1,0 +1,30 @@
+pipeline{
+  agent any
+  stages{
+  	stage('1-git-clone'){
+  		steps{
+  			sh 'https://github.com/yvanebo30/etech-jenkins-ci.git'
+  		}
+  	}
+  	stage('2-maven-build'){
+  		steps{
+  			sh 'action2'
+  		}
+  	}
+  	stage('3-mutation-test'){
+  		steps{
+  			sh 'action3'
+  		}
+  	}
+  	stage('4-Codequality'){
+  		steps{
+  			sh 'action4'
+  		}
+  	}
+  	stage('5-CodeDeploy'){
+  		steps{
+  			sh 'action5'
+  		}
+  	}
+  }
+}
